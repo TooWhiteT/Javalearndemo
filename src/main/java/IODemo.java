@@ -1,19 +1,13 @@
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class IODemo {
-
-    private static List<File> jpg = new ArrayList<>();
-    private static List<File> txt = new ArrayList<>();
-
     public static void main(String[] args) throws Exception{
         String path = "D:/1.jpg";
         String url = "http://pic1.win4000.com/pic/1/6d/2d1e351865.jpg";
-        DownloadFile(url,path);
-        //ForeachFile(path);
+        //DownloadFile(url,path);
+        ForeachFile("D:/轮播壁纸");
 
     }
     public static void DownloadFile(String urlpath,String filepath){
@@ -44,12 +38,11 @@ public class IODemo {
                 return;
             }else {
                 if(filearr[i].getName().endsWith(".jpg")){//获取文件名  判断后缀结尾来分类文件
-                    jpg.add(filearr[i]);
-                    String newname = "白蛇缘起"+(i+1)+".jpg";//更改后的文件名
+                    String newname = "轮播壁纸"+(i+123)+".jpg";//更改后的文件名
                     File newfile = new File(path+"/"+newname);//使用更改后的文件名新建文件
                     filearr[i].renameTo(newfile);//新文件覆盖原文件
                 }else {
-                    txt.add(filearr[i]);
+                    return;
                 }
             }
         }
